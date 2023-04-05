@@ -40,11 +40,23 @@ You'll see that there is no email/password options. Instead, the Youtube API use
 The package used to include a default ```client_secrets.json``` file. It does not work anymore, Google has revoked it. So you now must [create and use your own OAuth 2.0 file](https://developers.google.com/youtube/registering_an_application), it's a free service. Steps:
 
 * Go to the Google [console](https://console.developers.google.com/).
-* _Create project_.
+* _Create a project_.
+
+<details>
+  <summary>If you need to set up the OAuth consent screen, click here</summary>
+
+* test
+* Side menu: OAuth consent screen
+* _User Type_: External -> Create
+* _OAuth consent screen_: App name: youtube-upload, User support email: youremail, Developer contact information: youremail -> Save and Continue
+* _Test users_: Add users: youremail
+
+</details>
+
 * Side menu: _APIs & auth_ -> _APIs_
 * Top menu: _Enabled API(s)_: Enable all Youtube APIs.
 * Side menu: _APIs & auth_ -> _Credentials_.
-* _Create a Client ID_: Add credentials -> OAuth 2.0 Client ID -> Other -> Name: youtube-upload -> Create -> OK
+* _Create a Client ID_: Add credentials -> OAuth 2.0 Client ID -> Desktop app -> Name: youtube-upload -> Create -> OK
 * _Download JSON_: Under the section "OAuth 2.0 client IDs". Save the file to your local system. 
 * Use this JSON as your credentials file: `--client-secrets=CLIENT_SECRETS` or copy it to `~/client_secrets.json`.
 
